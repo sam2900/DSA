@@ -1,0 +1,27 @@
+here basically our approach is make to mark each vertical as a line on x axis and for each vertical a level as y axis
+now we will iterate the x axis(verticals) in ascending order and for each vertical we iterate the level in ascending order
+so we need something to store verticals and levels in an increasing order, and also for a vertical it should map all its levels
+and for each level we require all the nodes in sorted order
+
+so a best choice for TreeMap to store the levels and verticals in sorted manner and also since there are unique values for each
+so no issues, and for each of them we store a priorityQueue for storing the nodes
+
+so we create a TreeMap<Integer<TreeMap<Integer,PriorityQueue<Integer>>
+and a queue that will store a object of class tuple
+now this tuple class will have 3 things for us, the node its level and vertical
+and we do the level order traversal
+
+we check if the map contains the vertical if not we add
+and similarly for level
+after we know that the map contains both level and vertical then we add the nodes value to the PQ
+
+now we call on left and right
+    for left the vertical will be -1 and level will be +1
+    for right the vertical will be +1 and level will be +1
+
+after the traversal the map will have the ans
+so we iterate over map(vertical) then on Level and for each level we have a new list and in that list we add the node's value
+
+## Documentation
+
+https://takeuforward.org/data-structure/vertical-order-traversal-of-binary-tree/
