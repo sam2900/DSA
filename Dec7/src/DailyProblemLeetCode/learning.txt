@@ -16,3 +16,14 @@ You are given a string num, representing a large integer. Return the largest-val
 A substring is a contiguous sequence of characters within a string.
 
 if the whole string itself is odd, then it will be the largest odd number
+
+Given nnn as the length of num,
+
+Time complexity: O(n)
+
+In the worst-case scenario, we iterate over every character in num, performing O(1)O(1)O(1) work at each iteration.
+
+Space complexity: O(1)
+
+We aren't using any extra space. We don't count the answer as part of the space complexity.
+
