@@ -1,0 +1,19 @@
+606. Construct String from Binary Tree
+Given the root of a binary tree, construct a string consisting of parenthesis and integers from a binary tree with the preorder traversal way, and return it.
+
+Omit all the empty parenthesis pairs that do not affect the one-to-one mapping relationship between the string and the original binary tree.
+
+Input: root = [1,2,3,4]
+Output: "1(2(4))(3)"
+Explanation: Originally, it needs to be "1(2(4)())(3()())", but you need to omit all the unnecessary empty parenthesis pairs. And it will be "1(2(4))(3)"
+
+Basically here i call the helper and ask the recursion to get left and right
+and then if both are null or empty strings i return the root
+if left is null and right is not, then i add an empty () and right's value
+and similarly if right is null and left is not then add left and return
+in the end i add both and return
+
+now the optimised approach is
+we use StringBuilder class, do a dfs traversal with the universal string
+and if root is leaf then just return else there will atleast be 1 child
+if left is null then i add empty () else in any other case just add
