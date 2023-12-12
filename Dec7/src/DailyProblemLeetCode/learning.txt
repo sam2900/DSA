@@ -5,7 +5,8 @@ Thus, precisely because '0' == 48, the code will also work with:
 sum += s[i] - '0';
 The intention is perhaps slightly more clear in this version.
 
-You can of course do the "reverse" mapping by addition, e.g. 5 + '0' == '5'. Similarly, if you have a char containing a letter in 'A'..'Z' range, you can "subtract" 'A' from it to get the index of that letter in the 0..25 range.
+You can of course do the "reverse" mapping by addition, e.g. 5 + '0' == '5'. Similarly, if you have a char containing a letter in 'A'..'Z' range, you can "subtract" 'A' from it 
+to get the index of that letter in the 0..25 range.
 
 Approach 1: BFA given as solution, we traverse from front to end
 Approach 2: here the optimisation done is we traverse from back rather than from front, so the tc is better
