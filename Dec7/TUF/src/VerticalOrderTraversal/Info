@@ -1,4 +1,4 @@
-here basically our approach is make to mark each vertical as a line on x axis and for each vertical a level as y axis
+here basically our approach is to mark each vertical as a line on x axis and for each vertical a level as y axis
 now we will iterate the x axis(verticals) in ascending order and for each vertical we iterate the level in ascending order
 so we need something to store verticals and levels in an increasing order, and also for a vertical it should map all its levels
 and for each level we require all the nodes in sorted order
@@ -25,3 +25,13 @@ so we iterate over map(vertical) then on Level and for each level we have a new 
 ## Documentation
 
 https://takeuforward.org/data-structure/vertical-order-traversal-of-binary-tree/
+
+
+revision (12/12/2023)
+kuch nahi bhai sidha mamla ye hai
+har node ko app 2d Plane me plot krdo 
+now each will have its x and y coordinate and its value
+
+now VOT says, we traverse from the smallest value of x and for that x, we start from smallest value of y and for that y we print the values in increasing order
+now for a vertical x, we can have n levels, and we need to get the levels in O(1), so a TreeMap will be a better choice
+similarly for a level we need to get all the nodes present at that level, so for that also we maintain a priorityQueue, to store the nodes in sorted order
