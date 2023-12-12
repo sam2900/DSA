@@ -10,8 +10,12 @@ for solution we need to write 4 functions
 3: rightBoundary() -> gives the right boundary in reverse order
 4: addLeafs() -> gives all the leafs from left to top level manner
 
+below starts the process of traversal from the main function
+
 2: leftBoundary() ->
-    To traverse the left boundary, we can set a simple iteration. Initially, we make the cur pointer point to the root’s left. In every iteration, if the cur node is not a leaf node, we print it. Then we always try to move left of the cur pointer. If there is no left child, then we move to the right of cur and in the next iteration, again try to move to the left first. We stop our execution when cur is pointing to NULL.
+    To traverse the left boundary, we can set a simple iteration. Initially, we make the cur pointer point to the root’s left. In every iteration, if the cur node is not a leaf node, we print it. 
+    Then we always try to move left of the cur pointer. If there is no left child, then we move to the right of cur and in the next iteration, again try to move to the left first. 
+    We stop our execution when cur is pointing to NULL.
 
     here basically we pass the root to the function and then we make the curr point to its left. Now we run a while loop
     till that curr != null, now we check if curr is leaf or not, if its not leaf then we add it to the list,
@@ -19,21 +23,26 @@ for solution we need to write 4 functions
     so we check first if its left is null or not, if its not then we make curr point to left, meaning we traverse left first, dfs way
     else we will make curr point to right and repeat the while loop
     in case the node curr is pointing to is a leaf then in the end curr will update to null and the while loop ends
+    we don't add leaf nodes here as for them separate function call is there
 
 4: addLeafs() ->
     To print the leaf nodes, we can do a simple preorder traversal, and check if the current node is a leaf node or not. If it is a leaf node just print it.
 
-    Please note that we want the leaves to come in a specific order which is bottom-left to top-right, therefore a level order traversal will not work because it will print the upper-level leaves first. Therefore, we use a preorder traversal.
-
+    Please note that we want the leaves to come in a specific order which is bottom-left to top-right, therefore a level order traversal will not work because it will print the upper-level leaves first. 
+    Therefore, we use a preorder traversal.
+    as we print root first then we visit left most part of the tree first and after finishing it we go to right starting from left 
 
     here basically we do preorder traversal and we first check whether the root passed is a leaf or not, if yes
     add it into the list
     then check if its left is not null, call recursion on left and similarly on right afterwards
 
 3: rightBoundary() ->
-    We need to print the right boundary in the Reverse direction. It is very similar to the left boundary traversal. We initialize our cur pointer to the right child of the root node and set an iterative loop. To achieve the reverse direction, we take an auxiliary list. In every iteration, we check if the current node is not a leaf node then we push it to the auxiliary list. Then we first try to move right of cur, if there is no right child only then we move left. We stop our execution once cur points to NULL.
+    We need to print the right boundary in the Reverse direction. It is very similar to the left boundary traversal. We initialize our cur pointer to the right child of the root node and set an iterative loop. 
+    To achieve the reverse direction, we take an auxiliary list. In every iteration, we check if the current node is not a leaf node then we push it to the auxiliary list. 
+    Then we first try to move right of cur, if there is no right child only then we move left. We stop our execution once cur points to NULL.
 
-    Now the auxiliary list contains the nodes of the right boundary. We iterate from the end to start off this list and in every iteration, push the value to our main boundary traversal list. This way we get the nodes in the reverse direction.
+    Now the auxiliary list contains the nodes of the right boundary. We iterate from the end to start off this list and in every iteration, push the value to our main boundary traversal list. 
+    This way we get the nodes in the reverse direction.
 
     similar to left boundary, just call recursion and pointing is done on the right child first then on the left child
 
