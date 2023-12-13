@@ -1,0 +1,6 @@
+Convert Min Heap To Max Heap
+
+code studio problem from tuf
+
+now here basically i have used the heap sort heapify method to build maxHeap from the
+given input array only

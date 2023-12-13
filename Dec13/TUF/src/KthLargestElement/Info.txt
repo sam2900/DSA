@@ -1,0 +1,16 @@
+215. Kth Largest Element in an Array
+
+Better Approach:
+    /**
+    this is completely different approach
+    here we basically maintain a minHeap of size k
+    now everytime when the size of heap crosses k we poll 1 element out
+    this way at the end the element at the top will be our kth largest element */
+
+
+BFA:
+    wahi build max heap and poll k-1 times when k==1 thats the ans
+
+Naive:
+    sort the array and return the kth element
+Learn about Quick Select Algo here

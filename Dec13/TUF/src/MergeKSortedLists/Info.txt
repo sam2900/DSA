@@ -1,0 +1,6 @@
+23. Merge k Sorted Lists
+it is a hard problem
+
+i did my intuition approach
+
+optimisation can be done like using DAC approach
