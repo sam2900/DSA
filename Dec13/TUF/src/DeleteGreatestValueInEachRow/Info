@@ -1,0 +1,16 @@
+2500. Delete Greatest Value in Each Row
+
+given mxn matrix, here everytime we have to find the maximum integer from each row of matrix and delete them
+and add the maximum of them into ans
+after each operation 1 column will be reduced
+
+Approach 1: BFA
+    here basically i used minHeap and TreeMap
+    TreeMap is used to store the rows 0..n in sorted order and for each row a PQ to store the values in sorted order
+
+    now the approach is using min PQ we will find the maximum in a column for each iteration and add it to ans
+
+    now if we use minHeap, then we will find the max element in a column from 0..n
+    but if we use maxHeap then we will start from n..0
+
+many optimisations can be done
