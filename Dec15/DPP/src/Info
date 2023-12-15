@@ -1,0 +1,20 @@
+
+
+Approach 2:
+    /**
+    the approach is we will create a HashMap of Source to Destination
+    now here after creating the map, i traverse over the values of map, that is all the destinations of the source
+
+    the optimisation here done is
+    we pick the first source given to us and then iterate over the destinations until we get a point for which we don't have any where else to go
+
+    by doing this we don't have to travel all the values of map
+    as from source there will definately a path to end so only 1 path is traversed not all */
+
+Approach 1:
+
+/**
+the approach is we will create a HashMap of Source to Destination
+now here after creating the map, i traverse over the values of map, that is tall the destinations of the source
+and for each destination, i check whether it is a source or not,
+if its a source move ahead else that will be the destination as from it we cannot reach anywhere else */

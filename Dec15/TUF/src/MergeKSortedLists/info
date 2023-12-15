@@ -1,0 +1,22 @@
+
+
+Appraoch 1:
+    here basically i create a minHeap and then traverse each list, to add each element
+    into the heap
+    then after creation of heap, i will remove the element one by one to get them in
+    sorted order and return the ans
+
+
+Approach 2:
+    here basically i will create a temp list and add all the elements into that
+    then sort it using collections
+    then traverse the list again and create a LL and return the ans
+    here basically i create a list to store all the elements of all the k Linked lists
+    //now we sort that list
+    //after sorting we create a linked list for each of elements
+    //tc: O(n) + O(nlogn) + O(n);
+
+Approach 3:
+    here basically i implement the mergeSort on the given array of LinkedLists
+    since each list is sorted in itself
+    so i call merge sort

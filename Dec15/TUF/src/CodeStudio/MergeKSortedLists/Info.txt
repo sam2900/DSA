@@ -1,0 +1,18 @@
+here in cn we were given k ArrayLists and we need to merge them in sorted order
+
+Approach 1:
+    basically i created a minPriorityQueue and then for each list i added the elements into
+    the pq
+    after that since it is a min pq then it will maintain the sorted order
+    so polled elements out of it one by one and added into the ans list and returned
+
+    TC:
+        addition of 1 element in pq take log n time
+        so addition of n elements will take nlogn time
+        now n is the total number of elements and there are k lists
+        so the overall tc for addition is O(n*k*logn) + O(n*k*logn) -> for deletion
+
+Approach 2:
+    here we can simply add all the elements into the list, and then call merge sort
+    TC:
+        O(nLog(n));

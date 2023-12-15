@@ -1,0 +1,19 @@
+Replace Each Element Of Array With Its Corresponding Rank
+Code Studio
+Sample Input 2 :
+5
+1 2 6 9 2
+Sample Output 2 :
+1 2 3 4 2
+
+Approach 1: BFA
+    here basically i create 1 temporary list and add all elements into it
+    then sort it
+    now based on this sorted arr, i take each element and add it to the HashMap with the rank
+    now after this we again traverse the unsorted arr and for each unsorted element
+    we find the value/rank from the map and put it
+
+Approach 2: better approach
+    here everything is same, just instead of sorting we use heap
+    and then maintain a rank var and put each element into map from heap
+    then iterate the original arr and put the rank from map into temp list and return it
