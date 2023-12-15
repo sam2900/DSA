@@ -1,6 +1,36 @@
-23. Merge k Sorted Lists
-it is a hard problem
+23. Merge k Sorted Lists(hard)
 
-i did my intuition approach
+You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 
-optimisation can be done like using DAC approach
+Merge all the linked-lists into one sorted linked-list and return it.
+
+Input: lists = [[1,4,5],[1,3,4],[2,6]]
+Output: [1,1,2,3,4,4,5,6]
+Explanation: The linked-lists are:
+[
+  1->4->5,
+  1->3->4,
+  2->6
+]
+merging them into one sorted list:
+1->1->2->3->4->4->5->6
+
+Approach 1: BFA:
+    here basically i create a minHeap and then for each element of all K lists
+    i add them into the heap
+    after this i create a new linked list node and poll each element from heap
+    and add it to the ll
+
+Approach 2:
+    i create a list of all elements of k lists
+    then sort that list using in-built merge sort
+    then create LL from that given list
+Approach 3:
+    here basically i create my own merge sort rather than copying elements to a list
+    so how MS is implemented here
+
+    basically we find mid first then call on left
+        start to mid then on right mid+1 to end
+
+    merge sort will give 2 sub arrays left and right, now we need to merge them
+    for merging, we go in and check the merge procedure
