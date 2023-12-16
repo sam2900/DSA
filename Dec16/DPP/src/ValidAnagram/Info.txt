@@ -1,0 +1,68 @@
+242. Valid Anagram
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+
+
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+Output: true
+
+Approach 1: BFA
+    basically the approach was to create 2 different hashMaps to store the frequency of chars in the strings, and then
+    traverse the keySet of string 1's map and check 2 things
+    1: if 2nd map does not contain that key, it means that particular character is not present in the second string
+        so return false;
+    2: if the frequency of the character is not same in both the strings (map's value) then return false
+    else return true;
+    Procedure:
+        1: check for length mismatch of both strings if unequal return false;
+        2: create 2 maps of type Character,Integer
+        3: traverse each string 1 by 1 and update the frequency and char
+        4: traverse the keySet of map 1 and check both condition for map 2
+        return the ans;
+
+        using hashMap gave better TC
+        TreeMap bit slower
+        also for both strings if, use different loops then faster else if done in the single loop slower
+
+Approach 2:
+    here we did some observation
+    1: at-most there will be 26 characters of english available in the string.
+    so we create an array to store the frequency of the all 26 chars
+    now the indices in the array represent chars a..z -> 0..25
+    now for this mapping the formula is char - 'a' -> this results in the index mapping of 0..25
+    Each char has a corresponding Unicode value between 0 and 65,535. Subtracting 'a' (or, 97) scales each letter in the alphabet to the 0-26 range that corresponds to the "buckets" in the arr array.
+    Try this code with any character outside of a to z or with a capital letter. It'll crash because the ASCII representation of the character is out of the array's size and you'll wind up with an IndexOutOfBoundsException.
+
+    arr is made of an int array of size 26, which is also the number of letters in English alphabet. All that loop is doing is counting the frequency of the letters, represented via their index in the alphabet, arr[0] being 'a', arr[1] being 'b', etc.
+
+    The technicalities of it can be explained simply. s.charAt(i) is returning a char instance at the specified position i. A char can also be represented as a byte in Java. The subtraction then takes the ASCII value (represented as a byte) of 'a' from the current character at i. So what you end up getting is 'a' - 'a' == 0, 'b' - 'a' == 1, and so on.
+
+    now we traverse each character of the string s
+    also to traverse each char of string we need to convert the string into character array
+        for this we use string.toCharArray();
+    now for each char, at its respective index, we increment the frequency
+
+
+    after the traversal for string s, we similarly traverse the string t
+        for string t instead of incrementing, we decrement the frequency
+        *
+        and at last we again traverse the array to check if all the indices values are 0 or not, if non-zero
+        then the strings are not anagram
+
+        *we can do a optimisation like in case string t has more frequency for an character, so it will turn out to make
+        the frequency in the arr to be negative, so we can add a check, as soon as frequency goes below 0, then the
+        strings are uneven and cannot be anagrams return false
+
+    Procedure:
+        Check if the lengths of both strings are equal. If not, they cannot be anagrams, so return false.
+        Initialize an array map of size 26 to store the frequency of each character in the alphabet (assuming only lowercase English letters).
+        Iterate through both strings simultaneously. For each character, increment its count in map for the first string and decrement for the second string.
+        After the iteration, check if all counts in the map are zero. If yes, then the strings are anagrams; otherwise, they are not.
+        The provided solution contains some additional conditions related to the lengths of the strings and the characters at certain positions. These conditions seem to be specific to certain cases and might not be needed for a general solution.
+    TC:
+        Time complexity: O(n), where n is the length of the strings. We iterate through both strings once.
+        Space complexity: O(1) since the array map has a constant size (26).
