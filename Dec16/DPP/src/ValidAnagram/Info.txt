@@ -37,9 +37,11 @@ Approach 2:
     Each char has a corresponding Unicode value between 0 and 65,535. Subtracting 'a' (or, 97) scales each letter in the alphabet to the 0-26 range that corresponds to the "buckets" in the arr array.
     Try this code with any character outside of a to z or with a capital letter. It'll crash because the ASCII representation of the character is out of the array's size and you'll wind up with an IndexOutOfBoundsException.
 
-    arr is made of an int array of size 26, which is also the number of letters in English alphabet. All that loop is doing is counting the frequency of the letters, represented via their index in the alphabet, arr[0] being 'a', arr[1] being 'b', etc.
+    arr is made of an int array of size 26, which is also the number of letters in English alphabet. All that loop is doing is counting the frequency of the letters, 
+represented via their index in the alphabet, arr[0] being 'a', arr[1] being 'b', etc.
 
-    The technicalities of it can be explained simply. s.charAt(i) is returning a char instance at the specified position i. A char can also be represented as a byte in Java. The subtraction then takes the ASCII value (represented as a byte) of 'a' from the current character at i. So what you end up getting is 'a' - 'a' == 0, 'b' - 'a' == 1, and so on.
+    The technicalities of it can be explained simply. s.charAt(i) is returning a char instance at the specified position i. A char can also be represented as a byte in Java. 
+The subtraction then takes the ASCII value (represented as a byte) of 'a' from the current character at i. So what you end up getting is 'a' - 'a' == 0, 'b' - 'a' == 1, and so on.
 
     now we traverse each character of the string s
     also to traverse each char of string we need to convert the string into character array
@@ -62,7 +64,8 @@ Approach 2:
         Initialize an array map of size 26 to store the frequency of each character in the alphabet (assuming only lowercase English letters).
         Iterate through both strings simultaneously. For each character, increment its count in map for the first string and decrement for the second string.
         After the iteration, check if all counts in the map are zero. If yes, then the strings are anagrams; otherwise, they are not.
-        The provided solution contains some additional conditions related to the lengths of the strings and the characters at certain positions. These conditions seem to be specific to certain cases and might not be needed for a general solution.
+        The provided solution contains some additional conditions related to the lengths of the strings and the characters at certain positions. 
+These conditions seem to be specific to certain cases and might not be needed for a general solution.
     TC:
         Time complexity: O(n), where n is the length of the strings. We iterate through both strings once.
         Space complexity: O(1) since the array map has a constant size (26).
