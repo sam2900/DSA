@@ -1,0 +1,15 @@
+Code studio problem
+
+here basically we need to return a list of lists, where each list will be inorder, preorder
+and postorder traversal of the given tree
+
+BFA:
+    here i create 3 list and 1 ans list and then pass the 3 list to each recursive function
+    for inorder, preorder and postorder traversals and add the nodes to these lists
+    now since the list were create at main function so the reference remains the same
+
+    after the function calls are finished we add the 3 lists into main ans list and return the ans
+
+Optimisations
+    1: using stack
+    2: Morris traversal

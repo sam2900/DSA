@@ -1,0 +1,18 @@
+
+Stack Approach:
+    here basically we check first whether the root is null or not
+    if not then we create a stack of type treeNode and push the root into it
+    after this just like q of bfs we run a while loop till the stack is not empty
+    and take out the top most element from the stack
+    since in the first iteration root was at the top, it will come out first
+    after that we print it and check if the right child is null or not
+    if not push it into the stack and similarly for left child
+
+    why we push right first?
+        since the stack works in FIFO fashion so we need to put the right first
+        to get it at last and put the left later to get it first
+
+    so on popping from stack we get elements in preorder fashion
+
+    tc: O(N)
+    sc: O(N)
