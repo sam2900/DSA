@@ -1,0 +1,8 @@
+Iterative approaches
+1: Preorder -> root,left,right
+    here we use stack, so in stack what we do is, print top, then push right left, then again pop, so left comes out then push its right left, and carry on
+2: inorder -> left,root,right
+    here we need to infinitely go towards left, then in stack, we print top, then right basically after printing left null, we take out top, print it and move towards right, and carry same
+
+3: postOrder-> left,right,root
+    here we need 2 stacks, as root is printed at last, in s1 we add root, then add its left right child, then again pop the top, add its left child and repeat, the s2 will have the postorder poping
