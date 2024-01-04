@@ -12,7 +12,7 @@ public class BFA {
 
         Queue<Node> pendingNodes=new LinkedList<>();
         //the queue will be used to store the nodes for which we haven't connected the childrens
-        //now first we create the root node
+        //now first we create the root node, present at the 0th index
         Node root=new Node(arr[0]);
         //now we will put it into the q and run the bfs traversal
         pendingNodes.offer(root);
